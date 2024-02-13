@@ -6,13 +6,7 @@
 
 > Homebrew is a prerequisite on macOS for setting up pyenv.  It is a package manager that can be used to install many different packages.  Here we'll guide participants how to set it up.
 
-To install Homebrew - the package manager, the simplest way to do it is to open your terminal and run:
-
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-For other installation options, you can follow [the Homebrew installation guide](https://docs.brew.sh/Installation)
+To install Homebrew - the package manager, follow the instructions in [Install Homebrew](./install_homebrew.md)
 
 ## Install Pyenv
 

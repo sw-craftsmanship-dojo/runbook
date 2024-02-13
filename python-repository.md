@@ -1,11 +1,13 @@
 # Setting up a Python repository
 
+> This document describes how to guide participants through setting up a new repository from scratch for the Python lanugage, and in this case we are using ATM as the kata.  At the end the participants should have all of the pytest tooling installed, a new repository locally, and it also remotely, with pushed to github.com.
+
 When setting up a new repository from scratch, there are a number of steps to successfully complete it.  Rather than trying to copy it from another repository and correct it, here we take the approach of guiding you to set up a new repository from scratch with PyTest as the testing library.
 
 We will go through setting up a new repository for the ATM kata, so that we can use it in VSCode.
 
 1. Setup the local repository  
-Open a terminal and navigate to the directory that we you going to store your katas in e.g. ~/code/katas
+Open a terminal and navigate to the directory that you going to store your katas in e.g. ~/code/katas
 
 Run:
 
@@ -13,7 +15,7 @@ Run:
 git init atm
 ```
 
-This initialises the git repository locally and also creates the atm directory
+This initializes the git repository locally and also creates the atm directory
 
 To see it worked :
 
@@ -22,7 +24,7 @@ cd atm
 git status 
 ```
 
-You should see an output like:
+You should see an output like this:
 
 ```sh
 On branch main
@@ -39,12 +41,12 @@ Open the atm directory within VSCode, and then in VSCode open the terminal there
 pipenv install pytest pytest-cov pytest-watch pytest-pspec pytest-describe --dev
 ```
 
-This creates a new Pip environment where each of the packages are installed.  We are using Pytest and extensions of pytest to do our testing.
+This creates a new Pip environment where each of the packages is installed.  We are using Pytest and extensions of pytest to do our testing.
 
 After you have run that command successfully you will see that you have a Pipfile, which lists all of the packages you've installed as development packages.  You also have a Pipfile.lock which lists out what exactly is installed, along with the dependencies and the versions used.
 
 3. Configure pytest  
-Next we have to configure pytest.  So you can create a pytest.ini file, and in it paste:
+Next, we have to configure pytest.  So you can create a pytest.ini file, and in it paste:
 
 ```python
 [pytest]
@@ -52,7 +54,7 @@ addopts = --pspec --cov-config=.coveragerc --cov-report=term-missing --cov='.' -
 ```
 
 This is how we configure how pytest runs.  
-`--pspec` - is used to format the output of what tests are running in a nicer way
+`--pspec` - is used to format the output of what tests are running in an easy to understand format
 `--cov-config` - is used to configure coverage, and we will use the .coveragerc file that we will create in the next step  
 `--cov-report` - we specify the type of coverage report we want.  We use term-missing to include a column with the missing lines that are not covered  
 `--cov` - specifies that we are using the current directory for coverage  
@@ -62,7 +64,7 @@ This is how we configure how pytest runs.
 `-vv` - specifies that the output is very verbose  
 
 4. Configure code coverage  
-So we talked about the .coveragerc file, now we go ahead and create it. Once you have created the file, paste the following contents
+So we talked about the .coveragerc file, and now we go ahead and create it. Once you have created the file, paste the following contents
 
 ```python
 [run]
@@ -76,7 +78,7 @@ The indentation is important, and this is telling the coverage reporting to igno
 5. Create our test  
 You may have noticed that we talked about a tests folder, so let's create the file tests/test_atm.py, you can create a new file with that name, and it will end up creating the tests folder.
 
-In  tests/test_atm.py we are going to create a describe function, and inside of that we will a basic test.
+In  tests/test_atm.py we are going to create a describe function, and inside of that, we will add a basic test.
 
 ```python
 def describe_atm():
@@ -144,13 +146,13 @@ git add .
 git commit -m "initial commit
 ```
 
-We don't have a remote repository yet to push it to.  You can do that by going to https://github.com in your browser and create a new repository called atm.
+We don't have a remote repository yet to push it to.  You can do that by going to https://github.com in your browser and creating a new repository called atm.
 
 Once created you will have instructions on what to do next.  One set of instructions will have a message:
 
 > …or push an existing repository from the command line  
 
-You can copy the three commands and run from your terminal in VSCode.
+You can copy the three commands and run them from your terminal in VSCode.
 
 Now that you've pushed your code, refresh your page in your browser and you should see all of the files there.
 
@@ -199,7 +201,7 @@ ValueError: Directory not found: /Users/bob/code/katas/trial_python/modules
 ```
 
 8. Add our implementation  
-So let's go ahead and create the file modules/atm.py, and in that file you should create a function called validate which returns True.
+So let's go ahead and create the file modules/atm.py, in that file, you should create a function called validate which returns True.
 
 Then run the pipenv run watchTests command, and you should see something like:
 

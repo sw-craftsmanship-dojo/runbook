@@ -10,6 +10,10 @@ As we set up new cohorts in the Dojo, we find that we have to have instructions 
 
 * [Install Python](./install_python.md)
 
+## Setting up Tools
+
+* [Install Git](./install_git.md)
+
 ## Setting up the initial ATM kata
 
 * [Python](./python-repository.md)

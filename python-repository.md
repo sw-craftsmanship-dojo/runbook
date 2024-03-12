@@ -46,7 +46,7 @@ This creates a new Pip environment where each of the packages is installed.  We 
 After you have run that command successfully you will see that you have a _Pipfile_, which lists all of the packages you've installed as development packages.  You also have a _Pipfile.lock_ which lists out what exactly is installed, along with the dependencies and the versions used.
 
 3. Configure pytest  
-Next, we have to configure _pytest_.  So you can create a pytest.ini file, and in it paste:
+Next, we have to configure _pytest_.  So you can create a `pytest.ini` file, and in it paste:
 
 ```python
 [pytest]
@@ -78,7 +78,7 @@ omit =
 5. Create our test  
 You may have noticed that we talked about a tests folder, so let's create the file `tests/test_atm.py`, you can create a new file with that name, and it will end up creating the tests folder.
 
-In  _tests/test_atm.py_ we are going to create a describe function, and inside of that, we will add a basic test.
+In  `tests/test_atm.py` we are going to create a describe function, and inside of that, we will add a basic test.
 
 ```python
 def describe_atm():
@@ -88,7 +88,7 @@ def describe_atm():
 ```
 
 Save the file with the contents above.  Then in your terminal run
-pipenv run pytest
+`pipenv run pytest`
 
 This will give you output like:
 
@@ -125,7 +125,7 @@ If you go back to the test and remove the line with:
 """🧪 expect the validation to be true"""
 ```
 
-and re-run pipenv run pytest, you will see that the output has changed to:
+and re-run `pipenv run pytest`, you will see that the output has changed to:
 
 ```sh
 ...
@@ -184,7 +184,11 @@ watchTests = "ptw"
 `ptw` is the command for `pytest-watch`.
 
 Now in your terminal run:
+
+```sh
 pipenv run tests
+```
+
 So that we can see that the tests command works
 
 You will see that the output errors with:
@@ -203,7 +207,7 @@ ValueError: Directory not found: /Users/bob/code/katas/trial_python/modules
 8. Add our implementation  
 So let's go ahead and create the file `modules/atm.py`, in that file, you should create a function called `dummy()` which returns True.
 
-Then run the pipenv run watchTests command, and you should see something like:
+Then run the `pipenv run watchTests` command, and you should see something like:
 
 ```sh
 ____________________ ERROR collecting tests/test_atm.py ____________________
